@@ -14,5 +14,5 @@ Required Packages: wget
 - [ ] Compile for linux
 
 ## External Resources
-https://github.com/Facepunch/gmod-module-base
-https://github.com/ValveSoftware/openvr
+- https://github.com/Facepunch/gmod-module-base
+- https://github.com/ValveSoftware/openvr
