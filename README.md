@@ -1,8 +1,9 @@
 # GarrysMod VRMod Linux Port
+Original repository: https://github.com/catsethecat/vrmod-module
+
+This is a wip linux port of the gmod vrmod created by @catsethecat.
 
 Progress: Not Started
-
-Original repository: https://github.com/catsethecat/vrmod-module
 
 Required Packages: wget
 
