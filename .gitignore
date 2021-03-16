@@ -1,4 +1,12 @@
+# vrmod 
 deps
+# windows
 *.bat
 *.dll
 install_win
+# cmake
+build
+
+# kdevelop
+*kdev*
+*.kate-swp
