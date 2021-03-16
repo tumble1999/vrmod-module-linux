@@ -1,0 +1,4 @@
+deps
+*.bat
+*.dll
+install_win
