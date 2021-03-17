@@ -23,13 +23,10 @@ if [ ! -d "deps" ]; then
 fi
 
 
-if [ ! -d "build" ]; then mkdir build
-
+if [ ! -d "build" ]; then mkdir build; fi
 pushd build
 cmake ..
 
 make
 
 popd
-
-fi
