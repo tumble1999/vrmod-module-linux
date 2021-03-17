@@ -14,11 +14,11 @@ Debian: ```sudo apt install wget libopenvr-dev```
 Arch: ```sudo pacman -S wget openvr```
 
 ## TODO
-- [ ] Convert batch Scripts
-- [ ] Get Linux requivalents of dlls
-- [ ] Research for required devevlopment librarues
-- [ ] Compile for linux
-- [ ] Move to CMake
+- [x] Convert batch Scripts
+- [x] Move to CMake
+- [x] Research for required devevlopment librarue
+- [x] Get Linux requivalents of dlls
+- [ ] Learn Gmod Module api and DirectX
 
 ## External Resources
 - https://github.com/Facepunch/gmod-module-base
