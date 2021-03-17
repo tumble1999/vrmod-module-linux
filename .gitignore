@@ -1,5 +1,5 @@
 # vrmod 
-deps
+deps/*/
 # windows
 *.bat
 *.dll
