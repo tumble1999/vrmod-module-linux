@@ -167,5 +167,6 @@ some other issues
 
 
 ## External Resources
+- https://github.com/catsethecat/vrmod-module
 - https://github.com/Facepunch/gmod-module-base
 - https://github.com/ValveSoftware/openvr
