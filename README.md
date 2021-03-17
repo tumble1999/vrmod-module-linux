@@ -10,8 +10,8 @@ Progress: Not Started
 Required Packages: wget
 ## Building
 ### Prerequisites
-* Debian: ```sudo apt install wget libopenvr-dev```
-* Arch: ```sudo pacman -S wget openvr```
+* Debian: ```sudo apt install build-essentials cmake wget libopenvr-dev```
+* Arch: ```sudo pacman -S base-devel cmake wget openvr```
 ### Build
 ```
 chmod +x ./build.sh
