@@ -93,7 +93,7 @@ LUA_FUNCTION(Init) {
     vr::HmdError error = vr::VRInitError_None;
     g_pSystem = vr::VR_Init(&error, vr::VRApplication_Scene);
     if (error != vr::VRInitError_None) {
-//        sprintf_s(g_errorString, MAX_STR_LEN, "VR_Init failed: %i", error);
+    //    sprintf_s(g_errorString, MAX_STR_LEN, "VR_Init failed: %i", error);
         LUA->ThrowError(g_errorString);
     }
     if (!vr::VRCompositor())
@@ -103,39 +103,39 @@ LUA_FUNCTION(Init) {
         g_luaRefs[i] = LUA->ReferenceCreate();
         g_luaRefCount++;
     }
-//    HMODULE hMod = GetModuleHandleA("shaderapidx9.dll");
-//    if (hMod == NULL) LUA->ThrowError("GetModuleHandleA failed");
-//    CreateInterfaceFn CreateInterface = (CreateInterfaceFn)GetProcAddress(hMod, "CreateInterface");
-//   if (CreateInterface == NULL) LUA->ThrowError("GetProcAddress failed");
+    //HMODULE hMod = GetModuleHandleA("shaderapidx9.dll");
+    //if (hMod == NULL) LUA->ThrowError("GetModuleHandleA failed");
+    //CreateInterfaceFn CreateInterface = (CreateInterfaceFn)GetProcAddress(hMod, "CreateInterface");
+    //if (CreateInterface == NULL) LUA->ThrowError("GetProcAddress failed");
 #ifdef _WIN64
     DWORD_PTR fnAddr = ((DWORD_PTR**)CreateInterface("ShaderDevice001", NULL))[0][5];
     g_pD3D9Device = *(IDirect3DDevice9**)(fnAddr + 8 + (*(DWORD_PTR*)(fnAddr + 3) & 0xFFFFFFFF));
 #else
-//    g_pD3D9Device = **(IDirect3DDevice9***)(((DWORD_PTR**)CreateInterface("ShaderDevice001", NULL))[0][5] + 2);
+    //g_pD3D9Device = **(IDirect3DDevice9***)(((DWORD_PTR**)CreateInterface("ShaderDevice001", NULL))[0][5] + 2);
 #endif
-//    g_createTexture = ((CreateTexture**)g_pD3D9Device)[0][23];
+    //g_createTexture = ((CreateTexture**)g_pD3D9Device)[0][23];
     return 0;
 }
 
 LUA_FUNCTION(SetActionManifest) {
     const char* fileName = LUA->CheckString(1);
     char currentDir[MAX_STR_LEN];
-//    GetCurrentDirectory(MAX_STR_LEN, currentDir);
+    //GetCurrentDirectory(MAX_STR_LEN, currentDir);
     char path[MAX_STR_LEN];
-//    sprintf_s(path, MAX_STR_LEN, "%s\\garrysmod\\data\\%s", currentDir, fileName);
+    //sprintf_s(path, MAX_STR_LEN, "%s\\garrysmod\\data\\%s", currentDir, fileName);
     g_pInput = vr::VRInput();
     if (g_pInput->SetActionManifestPath(path) != vr::VRInputError_None) {
         LUA->ThrowError("SetActionManifestPath failed");
     }
     FILE* file = NULL;
-//    fopen_s(&file, path, "r");
+    //fopen_s(&file, path, "r");
     if (file == NULL) {
         LUA->ThrowError("failed to open action manifest");
     }
-//    memset(g_actions, 0, sizeof(g_actions));
+    //memset(g_actions, 0, sizeof(g_actions));
     char word[MAX_STR_LEN];
-//    while (fscanf_s(file, "%*[^\"]\"%[^\"]\"", word, MAX_STR_LEN) == 1 && strcmp(word, "actions") != 0);
-/*    while (fscanf_s(file, "%[^\"]\"", word, MAX_STR_LEN) == 1) {
+    //while (fscanf_s(file, "%*[^\"]\"%[^\"]\"", word, MAX_STR_LEN) == 1 && strcmp(word, "actions") != 0);
+    /*while (fscanf_s(file, "%[^\"]\"", word, MAX_STR_LEN) == 1) {
         if (strchr(word, ']') != nullptr)
             break;
         if (strcmp(word, "name") == 0) {
@@ -463,9 +463,18 @@ GMOD_MODULE_OPEN(){
         LUA->Pop(1);
         LUA->CreateTable();
     }
+
+    LUA->PushSpecial( GarrysMod::Lua::SPECIAL_GLOB ); // Push the global table
+     LUA->GetField( -1, "print" ); // Get the print function
+     LUA->PushString( "Swag" ); // Push our argument
+     LUA->Call( 1, 0 ); // Call the function
+ LUA->Pop(); // Pop the global table off the stack
+
+
+
     LUA->PushCFunction(GetVersion);
     LUA->SetField(-2, "GetVersion");
-    LUA->PushCFunction(IsHMDPresent);
+    /*LUA->PushCFunction(IsHMDPresent);
     LUA->SetField(-2, "IsHMDPresent");
     LUA->PushCFunction(Init);
     LUA->SetField(-2, "Init");
@@ -494,7 +503,7 @@ GMOD_MODULE_OPEN(){
     LUA->PushCFunction(TriggerHaptic);
     LUA->SetField(-2, "TriggerHaptic");
     LUA->PushCFunction(GetTrackedDeviceNames);
-    LUA->SetField(-2, "GetTrackedDeviceNames");
+    LUA->SetField(-2, "GetTrackedDeviceNames");*/
     LUA->SetField(-2, "vrmod");
     return 0;
 }

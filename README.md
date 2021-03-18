@@ -3,11 +3,16 @@ Original repository: https://github.com/catsethecat/vrmod-module
 
 **THIS IS UNFINSIHED DO NOT ATTEMPT TO INSTALL**
 
-This is a wip linux port of the gmod vrmod created by @catsethecat.
+This is a wip linux port of the gmod vrmod created by [Catse](https://steamcommunity.com/id/Catse).
 
 Progress: Not Started
 
 Required Packages: wget
+
+## Notes
+Linux binary mods are `.so` files renamed to `gmcl_modname_linux.dll`.
+Source: https://wiki.facepunch.com/gmod/Creating_Binary_Modules#naminglocation
+
 ## Building
 ### Prerequisites
 * Debian: ```sudo apt install build-essentials cmake wget libopenvr-dev libglew-dev```
@@ -28,7 +33,7 @@ chmod +x ./build.sh
 
 ## Old README
 ```
-his module adds some Lua functions to provide basic OpenVR support to Garry's Mod.
+This module adds some Lua functions to provide basic OpenVR support to Garry's Mod.
 
 To install or update the module, open the "install" folder and read "INSTALLATION.txt"
 
@@ -167,6 +172,8 @@ some other issues
 
 
 ## External Resources
-- https://github.com/catsethecat/vrmod-module
-- https://github.com/Facepunch/gmod-module-base
-- https://github.com/ValveSoftware/openvr
+- Base: https://github.com/catsethecat/vrmod-module
+* OpenGL: https://www.opengl.org/
+* OpenGL Extention Loader: http://glew.sourceforge.net/
+- GMod Module Template: https://github.com/Facepunch/gmod-module-base
+- OpenVR: https://github.com/ValveSoftware/openvr

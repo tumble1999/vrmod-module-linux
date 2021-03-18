@@ -2,7 +2,6 @@
 deps/*/
 # windows
 *.bat
-*.dll
 install_win
 # cmake
 build
